@@ -1,0 +1,29 @@
+root: true
+
+env: # https://eslint.org/docs/user-guide/configuring#specifying-environments
+  es6: true
+  commonjs: true
+  node: true
+
+plugins:
+  - react
+  - prettier
+
+extends:
+  - eslint:recommended
+  - plugin:prettier/recommended
+
+rules:
+  react/display-name: [0]
+
+###--------------------------------------------
+
+overrides:
+  - files:
+      - '*.js'
+    parser: 'babel-eslint'
+    parserOptions:
+      sourceType: module
+      ecmaVersion: 2015
+      ecmaFeatures:
+        legacyDecorators: true
